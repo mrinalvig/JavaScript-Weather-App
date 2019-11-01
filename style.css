@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: top;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("gradient_sunset.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    font-family: sans-serif;
+    color: white;
+}
+
+.location, 
+.temperature
+{
+    height: 30vh;
+    width: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.temperature
+{
+    flex-direction: column;
+}
+
+.degree-section
+{
+    display: flex;
+    align-items: top;
+    cursor: pointer;
+}
+
+.degree-section span
+{
+    margin: 10px;
+    font-size: 30px;
+}
+
+.degree-section2 span, .degree-section3 span, .degree-section4 span, .degree-section5 span, .degree-section6 span, .degree-section7 span
+{
+    font-size: 30px;
+}
+
+.degree-section h2
+{
+    font-size: 100px;
+}
+
+.degree-section2 h2, .degree-section3 h2, .degree-section4 h2, .degree-section5 h2, .degree-section6 h2, .degree-section7 h2
+{
+    font-size: 50px;
+}
+
+.temperature-description
+{
+    font-size: 60px;
+}
+
+.temperature-description2, .temperature-description3, .temperature-description4, .temperature-description5, .temperature-description6, .temperature-description7
+{
+    font-size: 60px;
+}
+
+.location-timezone
+{
+    font-size: 50px;
+}
+
+.location-timezone2, .location-timezone3, .location-timezone4, .location-timezone5, .location-timezone6, .location-timezone7
+{
+    font-size: 24px;
+}
+
+.icon2, .icon3, .icon4, .icon5, .icon6, .icon7
+{
+    width: 175px;
+    height: 175px;
+}
+
+.day1
+{
+    position: absolute;
+    bottom: 15px;
+    left: 60px;
+    padding: 10px 30px;
+    border-width: 5px;
+    height: 400px;
+    width: 300px;
+}
+
+.day2
+{
+    position: absolute;
+    bottom: 15px;
+    left: 400px;
+    padding: 10px 30px;
+    border-width: 5px;
+    height: 400px;
+    width: 300px;
+}
+
+.day3
+{
+    position: absolute;
+    bottom: 15px;
+    left: 740px;
+    padding: 10px 30px;
+    border-width: 5px;
+    height: 400px;
+    width: 300px;
+}
+
+.day4
+{
+    position: absolute;
+    bottom: 15px;
+    left: 1360px;
+    padding: 10px 30px;
+    border-width: 5px;
+    height: 400px;
+    width: 300px;
+}
+
+.day5
+{
+    position: absolute;
+    bottom: 15px;
+    left: 1700px;
+    padding: 10px 30px;
+    border-width: 5px;
+    height: 400px;
+    width: 300px;
+}
+
+.day6
+{
+    position: absolute;
+    bottom: 15px;
+    left: 2040px;
+    padding: 10px 30px;
+    border-width: 5px;
+    height: 400px;
+    width: 300px;
+}
