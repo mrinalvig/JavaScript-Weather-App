@@ -56,6 +56,7 @@ window.addEventListener("load", ()=>
             
             long = position.coords.longitude;
             lat = position.coords.latitude;
+
             const api = `${proxy}https://api.darksky.net/forecast/92d098babd7ceed2a88dd35086467e72/${lat},${long}`;
 
 
@@ -68,54 +69,91 @@ window.addEventListener("load", ()=>
                 {
                     console.log(data);  
                     const {temperature, summary, time, icon} = data.currently;
+                    const icon2 = data.daily.data[0].icon;
+                    const icon3 = data.daily.data[1].icon;
+                    const icon4 = data.daily.data[2].icon;
+                    const icon5 = data.daily.data[3].icon;
+                    const icon6 = data.daily.data[4].icon;
+                    const icon7 = data.daily.data[5].icon;
+                    const temperature12 = data.daily.data[0].temperatureHigh;
+                    const temperature22 = data.daily.data[0].temperatureLow;
+                    const temperature13 = data.daily.data[1].temperatureHigh;
+                    const temperature23 = data.daily.data[1].temperatureLow;
+                    const temperature14 = data.daily.data[2].temperatureHigh;
+                    const temperature24 = data.daily.data[2].temperatureLow;
+                    const temperature15 = data.daily.data[3].temperatureHigh;
+                    const temperature25 = data.daily.data[3].temperatureLow;
+                    const temperature16 = data.daily.data[4].temperatureHigh;
+                    const temperature26 = data.daily.data[4].temperatureLow;
+                    const temperature17 = data.daily.data[5].temperatureHigh;
+                    const temperature27 = data.daily.data[5].temperatureLow;
+                    const summary2 = data.daily.data[0].summary;
+                    const summary3 = data.daily.data[1].summary;
+                    const summary4 = data.daily.data[2].summary;
+                    const summary5 = data.daily.data[3].summary;
+                    const summary6 = data.daily.data[4].summary;
+                    const summary7 = data.daily.data[5].summary;
                     timezoneLocation.textContent = data.timezone;
                     
 
                     tempDescription.textContent = summary;
-                    tempDescription2.textContent = summary;
-                    tempDescription3.textContent = summary;
-                    tempDescription4.textContent = summary;
-                    tempDescription5.textContent = summary;
-                    tempDescription6.textContent = summary;
-                    tempDescription7.textContent = summary;
+                    tempDescription2.textContent = summary2;
+                    tempDescription3.textContent = summary3;
+                    tempDescription4.textContent = summary4;
+                    tempDescription5.textContent = summary5;
+                    tempDescription6.textContent = summary6;
+                    tempDescription7.textContent = summary7;
 
-                    tempDegree.textContent = temperature;
-                    tempDegree2.textContent = temperature; 
-                    tempDegree3.textContent = temperature; 
-                    tempDegree4.textContent = temperature; 
-                    tempDegree5.textContent = temperature; 
-                    tempDegree6.textContent = temperature; 
-                    tempDegree7.textContent = temperature; 
+                    tempDegree.textContent = temperature; 
+                    tempDegree2.textContent = "High: " + temperature12 + " F\nLow: " + temperature22 + " F"; 
+                    tempDegree3.textContent = "High: " + temperature13 + " F\nLow: " + temperature23 + " F";  
+                    tempDegree4.textContent = "High: " + temperature14 + " F\nLow: " + temperature24 + " F";  
+                    tempDegree5.textContent = "High: " + temperature15 + " F\nLow: " + temperature25 + " F"; 
+                    tempDegree6.textContent = "High: " + temperature16 + " F\nLow: " + temperature26 + " F";  
+                    tempDegree7.textContent = "High: " + temperature17 + " F\nLow: " + temperature27 + " F";
 
 
                     tempTime.textContent = now;
 
                     //Set icon
                     setIcons(icon, document.querySelector(".icon"));
-                    setIcons(icon, document.querySelector(".icon2"));
-                    setIcons(icon, document.querySelector(".icon3"));
-                    setIcons(icon, document.querySelector(".icon4"));
-                    setIcons(icon, document.querySelector(".icon5"));
-                    setIcons(icon, document.querySelector(".icon6"));
-                    setIcons(icon, document.querySelector(".icon7"));
+                    setIcons(icon2, document.querySelector(".icon2"));
+                    setIcons(icon3, document.querySelector(".icon3"));
+                    setIcons(icon4, document.querySelector(".icon4"));
+                    setIcons(icon5, document.querySelector(".icon5"));
+                    setIcons(icon6, document.querySelector(".icon6"));
+                    setIcons(icon7, document.querySelector(".icon7"));
 
                     //Conversion
                     let celsius = (temperature - 32) * (5 / 9);
 
-                    //Change degree type
+                    /*Change degree type
                     tempSection.addEventListener('click', ()=>
                     {
                         if(tempSpan.textContent === "F")
                         {
                             tempSpan.textContent = "C";
                             tempDegree.textContent = Math.floor(celsius);
+                            tempDegree2.textContent = Math.floor(celsius) + " C";
+                            tempDegree3.textContent = Math.floor(celsius) + " C";
+                            tempDegree4.textContent = Math.floor(celsius) + " C";
+                            tempDegree5.textContent = Math.floor(celsius) + " C";
+                            tempDegree6.textContent = Math.floor(celsius) + " C";
+                            tempDegree7.textContent = Math.floor(celsius) + " C";
                         }
                         else
                         {
                             tempSpan.textContent = "F";
                             tempDegree.textContent = temperature;
+                            tempDegree2.textContent = temperature + " F"; 
+                            tempDegree3.textContent = temperature + " F"; 
+                            tempDegree4.textContent = temperature + " F"; 
+                            tempDegree5.textContent = temperature + " F"; 
+                            tempDegree6.textContent = temperature + " F"; 
+                            tempDegree7.textContent = temperature + " F";
                         }
                     })
+                    */
                 });
         });
 
@@ -128,5 +166,4 @@ window.addEventListener("load", ()=>
         skycons.play();
         return skycons.set(iconID, Skycons[currentIcon]);
     }
-   
 });
