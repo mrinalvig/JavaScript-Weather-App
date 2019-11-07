@@ -69,6 +69,8 @@ window.addEventListener("load", ()=>
                 .then(data =>
                 {
                     console.log(data);  
+
+                    //Retrieving data from api to assign to page
                     const {temperature, summary, time, icon} = data.currently;
                     const icon2 = data.daily.data[0].icon;
                     const icon3 = data.daily.data[1].icon;
@@ -96,7 +98,7 @@ window.addEventListener("load", ()=>
                     const summary7 = data.daily.data[5].summary;
                     timezoneLocation.textContent = data.timezone;
                     
-
+                    //Setting forecast descriptions for the week
                     tempDescription.textContent = summary;
                     tempDescription2.textContent = summary2;
                     tempDescription3.textContent = summary3;
@@ -105,6 +107,7 @@ window.addEventListener("load", ()=>
                     tempDescription6.textContent = summary6;
                     tempDescription7.textContent = summary7;
 
+                    //High and low forecast for the week
                     tempDegree.textContent = temperature; 
                     tempDegree2.textContent = "High: " + temperature12 + " F\nLow: " + temperature22 + " F"; 
                     tempDegree3.textContent = "High: " + temperature13 + " F\nLow: " + temperature23 + " F";  
@@ -113,7 +116,7 @@ window.addEventListener("load", ()=>
                     tempDegree6.textContent = "High: " + temperature16 + " F\nLow: " + temperature26 + " F";  
                     tempDegree7.textContent = "High: " + temperature17 + " F\nLow: " + temperature27 + " F";
 
-
+                    //Set dates
                     tempTime.textContent = monthNames[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear();
                     tempTime2.textContent = monthNames[now.getMonth()] + " " + (now.getDate() + 1) + ", " + now.getFullYear();
                     tempTime3.textContent = monthNames[now.getMonth()] + " " + (now.getDate() + 2) + ", " + now.getFullYear();
@@ -132,41 +135,12 @@ window.addEventListener("load", ()=>
                     setIcons(icon6, document.querySelector(".icon6"));
                     setIcons(icon7, document.querySelector(".icon7"));
 
-                    //Conversion
-                    let celsius = (temperature - 32) * (5 / 9);
-
-                    /*Change degree type
-                    tempSection.addEventListener('click', ()=>
-                    {
-                        if(tempSpan.textContent === "F")
-                        {
-                            tempSpan.textContent = "C";
-                            tempDegree.textContent = Math.floor(celsius);
-                            tempDegree2.textContent = Math.floor(celsius) + " C";
-                            tempDegree3.textContent = Math.floor(celsius) + " C";
-                            tempDegree4.textContent = Math.floor(celsius) + " C";
-                            tempDegree5.textContent = Math.floor(celsius) + " C";
-                            tempDegree6.textContent = Math.floor(celsius) + " C";
-                            tempDegree7.textContent = Math.floor(celsius) + " C";
-                        }
-                        else
-                        {
-                            tempSpan.textContent = "F";
-                            tempDegree.textContent = temperature;
-                            tempDegree2.textContent = temperature + " F"; 
-                            tempDegree3.textContent = temperature + " F"; 
-                            tempDegree4.textContent = temperature + " F"; 
-                            tempDegree5.textContent = temperature + " F"; 
-                            tempDegree6.textContent = temperature + " F"; 
-                            tempDegree7.textContent = temperature + " F";
-                        }
-                    })
-                    */
                 });
         });
 
     }
-
+    
+    //Retrieving and icons
     function setIcons(icon, iconID)
     {
         const skycons = new Skycons({color: "white"});
