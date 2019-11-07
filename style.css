@@ -61,14 +61,14 @@ body{
     font-size: 38px;
 }
 
-.temperature-description
+.temperature-description, .time
 {
     font-size: 60px;
 }
 
 .temperature-description2, .temperature-description3, .temperature-description4, .temperature-description5, .temperature-description6, .temperature-description7
 {
-    text-align: center;
+    
     font-size: 28px;
 }
 
@@ -79,12 +79,13 @@ body{
 
 .location-timezone2, .location-timezone3, .location-timezone4, .location-timezone5, .location-timezone6, .location-timezone7
 {
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .icon2, .icon3, .icon4, .icon5, .icon6, .icon7
 { 
-    
+    position: relative;
+    left: 40px;
     width: 150px;
     height: 150px;
 }
@@ -92,7 +93,7 @@ body{
 .day1
 {
     position: absolute;
-    bottom: -30px;
+    bottom: -10px;
     left: 60px;
     padding: 10px 30px;
     border-width: 5px;
@@ -103,7 +104,7 @@ body{
 .day2
 {
     position: absolute;
-    bottom: -30px;
+    bottom: -10px;
     left: 400px;
     padding: 10px 30px;
     border-width: 5px;
@@ -114,7 +115,7 @@ body{
 .day3
 {
     position: absolute;
-    bottom: -30px;
+    bottom: -10px;
     left: 740px;
     padding: 10px 30px;
     border-width: 5px;
@@ -125,7 +126,7 @@ body{
 .day4
 {
     position: absolute;
-    bottom: -30px;
+    bottom: -10px;
     left: 1360px;
     padding: 10px 30px;
     border-width: 5px;
@@ -136,7 +137,7 @@ body{
 .day5
 {
     position: absolute;
-    bottom: -30px;
+    bottom: -10px;
     left: 1700px;
     padding: 10px 30px;
     border-width: 5px;
@@ -147,7 +148,7 @@ body{
 .day6
 {
     position: absolute;
-    bottom: -30px;
+    bottom: -10px;
     left: 2040px;
     padding: 10px 30px;
     border-width: 5px;

@@ -18,12 +18,14 @@ window.addEventListener("load", ()=>
     let tempDegree7 = document.querySelector(".temperature-degree7");
 
     let timezoneLocation = document.querySelector(".location-timezone");
-    let timezoneLocation2 = document.querySelector(".location-timezone2");
-    let timezoneLocation3 = document.querySelector(".location-timezone3");
-    let timezoneLocation4 = document.querySelector(".location-timezone4");
-    let timezoneLocation5 = document.querySelector(".location-timezone5");
-    let timezoneLocation6 = document.querySelector(".location-timezone6");
-    let timezoneLocation7 = document.querySelector(".location-timezone7");
+
+    let tempTime = document.querySelector('.time');
+    let tempTime2 = document.querySelector(".location-timezone2");
+    let tempTime3 = document.querySelector(".location-timezone3");
+    let tempTime4 = document.querySelector(".location-timezone4");
+    let tempTime5 = document.querySelector(".location-timezone5");
+    let tempTime6 = document.querySelector(".location-timezone6");
+    let tempTime7 = document.querySelector(".location-timezone7");
 
     let tempSection = document.querySelector('.temperature');
     let tempSection2 = document.querySelector('.temperature2');
@@ -41,9 +43,8 @@ window.addEventListener("load", ()=>
     const tempSpan6 = document.querySelector('.temperature span6');
     const tempSpan7 = document.querySelector('.temperature span7');
 
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const now = new Date();
-    const later = new Date();
-    let tempTime = document.querySelector('.time');
 
     let long;
     let lat;
@@ -113,7 +114,14 @@ window.addEventListener("load", ()=>
                     tempDegree7.textContent = "High: " + temperature17 + " F\nLow: " + temperature27 + " F";
 
 
-                    tempTime.textContent = now;
+                    tempTime.textContent = monthNames[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear();
+                    tempTime2.textContent = monthNames[now.getMonth()] + " " + (now.getDate() + 1) + ", " + now.getFullYear();
+                    tempTime3.textContent = monthNames[now.getMonth()] + " " + (now.getDate() + 2) + ", " + now.getFullYear();
+                    tempTime4.textContent = monthNames[now.getMonth()] + " " + (now.getDate() + 3) + ", " + now.getFullYear();
+                    tempTime5.textContent = monthNames[now.getMonth()] + " " + (now.getDate() + 4) + ", " + now.getFullYear();
+                    tempTime6.textContent = monthNames[now.getMonth()] + " " + (now.getDate() + 5) + ", " + now.getFullYear();
+                    tempTime7.textContent = monthNames[now.getMonth()] + " " + (now.getDate() + 6) + ", " + now.getFullYear();
+
 
                     //Set icon
                     setIcons(icon, document.querySelector(".icon"));
